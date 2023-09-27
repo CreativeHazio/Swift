@@ -1,0 +1,25 @@
+<resources>
+    <string name="app_name">Swift</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="home">Home</string>
+    <string name="saved_articles">Saved articles</string>
+    <string name="headline_test">The abuse of coffee among developers</string>
+    <string name="description_test">The use of coffee has grown among developers because they tend to want to stay awake during the night to code. This time of the day is always quiet and</string>
+    <string name="headlines">Headlines</string>
+    <string name="hi">Hi, CreativeHazio</string>
+    <string name="latest_article_txt">Stay up to date\nwith latest tech news</string>
+    <string name="latest_articles">Latest</string>
+    <string name="articles_loading_error">Oops, Failed to load articles!!</string>
+    <string name="retry">Retry</string>
+    <string name="article_saved">Article saved</string>
+    <string name="article_deleted">Article deleted!!</string>
+    <string name="undo">Undo</string>
+    <string name="network_failed">Network connection failed!!</string>
+    <string name="network_available">Network available</string>
+    <string name="network_unavailable">Network unavailable</string>
+    <string name="slow_internet_connection">Slow internet connection</string>
+    <string name="network_lost">Network Lost</string>
+    <string name="turn_on_mobile_data">No Internet connection, Make sure to turn on mobile data!!</string>
+    <string name="ok">Ok</string>
+</resources>

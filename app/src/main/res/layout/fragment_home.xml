@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/home_fragment_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.fragment.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+<!--    TODO: Put the shimmer below/beside their original data-->
+        <TextView
+            android:id="@+id/hi_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="50dp"
+            android:text="@string/hi"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_medium"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"/>
+        <TextView
+            android:id="@+id/latest_article_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/latest_article_txt"
+            android:textSize="30sp"
+            android:fontFamily="@font/roboto_black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/hi_txt"/>
+        <TextView
+            android:id="@+id/headline_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/headlines"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/latest_article_txt"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/article_headlines_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/headline_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/article_headlines_shimmer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/headline_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <include layout="@layout/article_headline_shimmer_cardview"/>
+                <include layout="@layout/article_headline_shimmer_cardview"/>
+                <include layout="@layout/article_headline_shimmer_cardview"/>
+                <include layout="@layout/article_headline_shimmer_cardview"/>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/article_topic_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="500dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:paddingTop="10dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/latest_txt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginStart="20dp"
+            android:text="@string/latest_articles"
+            android:textSize="20sp"
+            android:fontFamily="@font/roboto_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/article_topic_recycler_view"/>
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/articles_recycler_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/latest_txt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/articles_shimmer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            app:layout_constraintTop_toBottomOf="@id/articles_recycler_view"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <include layout="@layout/article_shimmer_cardview"/>
+                <include layout="@layout/article_shimmer_cardview"/>
+                <include layout="@layout/article_shimmer_cardview"/>
+                <include layout="@layout/article_shimmer_cardview"/>
+
+            </LinearLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

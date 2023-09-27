@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.creativehazio.swift.ui.fragment.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_articleFragment"
+            app:destination="@id/articleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/articleFragment"
+        android:name="com.creativehazio.swift.ui.fragment.ArticleFragment"
+        android:label="fragment_article"
+        tools:layout="@layout/fragment_article" >
+        <argument
+            android:name="article"
+            app:argType="com.creativehazio.swift.domain.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/savedArticlesFragment"
+        android:name="com.creativehazio.swift.ui.fragment.SavedArticlesFragment"
+        android:label="fragment_saved_articles"
+        tools:layout="@layout/fragment_saved_articles" >
+        <action
+            android:id="@+id/action_savedArticlesFragment_to_offlineArticleFragment"
+            app:destination="@id/offlineArticleFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/offlineArticleFragment"
+        android:name="com.creativehazio.swift.ui.fragment.OfflineArticleFragment"
+        android:label="fragment_offline_article"
+        tools:layout="@layout/fragment_offline_article" >
+        <argument
+            android:name="article"
+            app:argType="com.creativehazio.swift.domain.model.Article" />
+    </fragment>
+</navigation>
