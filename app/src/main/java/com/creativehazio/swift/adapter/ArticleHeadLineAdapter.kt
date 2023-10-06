@@ -42,7 +42,8 @@ class ArticleHeadLineAdapter : RecyclerView.Adapter<ArticleHeadLineAdapter.Headl
         val article = differ.currentList[position]
 
         holder.itemView.apply {
-            Glide.with(context).load(article.urlToImage).into(this.findViewById(R.id.headline_img))
+            Glide.with(context).load(article.urlToImage).placeholder(R.drawable.app_logo)
+                .into(this.findViewById(R.id.headline_img))
             this.findViewById<TextView>(R.id.headline_title).text = article.title
         }
 

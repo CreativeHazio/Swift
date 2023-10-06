@@ -39,21 +39,18 @@ class ArticlePagingSource(
                 category = articleCategory
             )
 
-            val articles = response.body()!!.articles
-            val articlesData = mutableListOf<Article>()
-            articlesData.addAll(articles)
+            val articles = response.body()?.articles.orEmpty()
 
-            val nextKey =
-                if (articles.isEmpty()) {
-                    null
-                } else {
-                    pageIndex + (params.loadSize / NETWORK_PAGE_SIZE)
-                }
-            LoadResult.Page(
-                data = articlesData,
-                prevKey = if (pageIndex == NEWS_STARTING_PAGE_INDEX) null else -1,
-                nextKey = nextKey
-            )
+            if (articles.isEmpty()) {
+                LoadResult.Page(emptyList(), null, null)
+            } else {
+                val nextKey = pageIndex + (params.loadSize / NETWORK_PAGE_SIZE)
+                LoadResult.Page(
+                    data = articles,
+                    prevKey = if (pageIndex == NEWS_STARTING_PAGE_INDEX) null else pageIndex - 1,
+                    nextKey = if (articles.isEmpty()) null else nextKey
+                )
+            }
         } catch (exception : IOException) {
             return LoadResult.Error(exception)
         } catch (exception : HttpException) {

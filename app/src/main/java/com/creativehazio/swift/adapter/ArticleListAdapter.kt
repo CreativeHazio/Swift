@@ -35,7 +35,8 @@ class ArticleListAdapter
     inner class ArticleListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
         fun bind(article : Article) {
-            Glide.with(itemView).load(article.urlToImage).into(itemView.findViewById(R.id.article_image))
+            Glide.with(itemView).load(article.urlToImage).placeholder(R.drawable.app_logo)
+                .into(itemView.findViewById(R.id.article_image))
             itemView.findViewById<TextView>(R.id.article_title).text = article.title
             itemView.findViewById<TextView>(R.id.article_description).text = article.description
             itemView.findViewById<TextView>(R.id.article_source).text = article.source?.name
